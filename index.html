@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<body>
+
+<h1 id=countdown>time</h1>
+
+	<script>
+	var text=document.getElementById("countdown");
+	var nextDate= new Date();
+	nextDate.setTime(1423878172)
+	setInterval(update, 800)
+	
+	
+	function update(){
+	
+	this.difference = nextDate - Date.now();
+	text.innerHtml=this.difference;
+	}
+	
+	
+	
+	</script>
+
+
+</body>
+
+
+</html>
