@@ -19,18 +19,38 @@
 		}
 	
 	</style>
-	<body>
+	<body id="bod">
 	
 	<div>
 		<h1 id="countdown">time</h1>
 	</div>
 		<script>
 			var clock = document.getElementById("countdown");
+			var body = document.getElementById("bod");
+			var r = 0;
+			var g = 0;
+			var b = 0;
+			var incr = true;
 			var targetDate= new Date();
 			targetDate.setTime(1423875600000);
 			
 			setInterval(function(){
 				clock.innerHTML = countdown(targetDate).toString();
+				if(incr){
+					r++;
+					g++;
+					b++;
+				}else{
+					r--;
+					g--;
+					b--;
+				}
+				
+				if(r >= 255 || g >= 255 || b >= 255){
+					incr = false;
+				}
+				
+				bod.bgcolor = rgb(r, g, b);
 				}, 1000);
 		
 		
