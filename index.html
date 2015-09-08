@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+	<script src="jquery-2.1.3.min.js"></script>
+	<script src="countdown.js"></script>
+	<style>
+		body{
+			background-color:slategray;
+			position: relative;
+		}
+		
+		h1{
+			width:100%;
+			height:100%;
+			text-align: center;
+			color: white;
+			padding-top:200px;
+		}
+	
+	</style>
+	<body id="bod">
+	
+	<div>
+		<h1 id="countdown">time</h1>
+	</div>
+		<script>
+			var clock = document.getElementById("countdown");
+			var body = document.getElementById("bod");
+			var r = 0;
+			var g = 0;
+			var b = 0;
+			var incr = true;
+			var targetDate= new Date();
+			targetDate.setTime(1431530898000);
+			
+			setInterval(function(){
+				clock.innerHTML = countdown(targetDate).toString();
+				if(incr){
+					r++;
+					g++;
+					b++;
+				}else{
+					r--;
+					g--;
+					b--;
+				}
+				
+				if(r >= 255 || g >= 255 || b >= 255){
+					incr = false;
+				}
+				
+				bod.backgroundColor = 'rgb(' + r + ',' + g+ ',' + b + ')';
+				}, 1000);
+		
+		
+		
+		</script>
+
+
+	</body>
+
+
+</html>
